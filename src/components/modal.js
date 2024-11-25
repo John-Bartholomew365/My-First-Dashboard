@@ -51,7 +51,7 @@ const Modal = ({ show, onClose, children }) => {
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm z-50">
       <div className="bg-[#181818] p-6 rounded-lg relative max-w-lg w-full mx-4">
         <button className="absolute top-3 right-3 text-xl text-white" onClick={onClose}>
-          &times;
+          {/* &times; */}
         </button>
         {children}
       </div>

@@ -11,7 +11,7 @@ export default function Hero() {
 
   const currencies = [
     { code: "USD", balance: "$3450.90", pending: "$2000.90" },
-    { code: "SGD", balance: "S$3450.90", pending: "S$5000.90" },
+    { code: "SGD", balance: "$3450.90", pending: "S$5000.90" },
     { code: "NGN", balance: "₦3450.90", pending: "₦5000.90" },
   ];
 
@@ -120,9 +120,9 @@ export default function Hero() {
             </h1>
           </div>
         ))}
+
         <button className="flex items-center opacity-70" onClick={openModal}>
           Add Account
-          
           <Image
             src="/plus.svg"
             alt="plus Icon"
@@ -133,22 +133,36 @@ export default function Hero() {
         </button>
 
         <Modal show={isModalOpen} onClose={closeModal}>
-          <div className="bg-cover bg-center bg-[url('/modal-bg.svg')] h-[108px] p-3 rounded-md">
-            <h1 className="text-[24px] font-bold ">Add new account</h1>
-            <p className="opacity-70">Add a currency account of your choice</p>
+          <div className=" h-[108px] flex justify-between p-3 rounded-md">
+            <div>
+              <h1 className="text-[24px] font-bold">Add new account</h1>
+              <p className="opacity-70">Add a currency account of your choice</p>
+            </div>
+            <div onClick={closeModal} className="cursor-pointer text-lg">
+              &times;
+            </div>
           </div>
           <div className="bg-black rounded-md">
-            <div className="bg-black p-2 my-3 rounded-[20px] ">
+            <div className="bg-black p-2 my-3 rounded-[20px]">
               <div className="flex gap-2">
-                
                 <select className="w-full p-2 mb-3 rounded-md bg-black text-white">
                   <option value="usd">
-                  <Image src="/usd.svg" alt="usd Icon" width={16} height={16} />United States Dollar</option>
+                    <Image
+                      src="/usd.svg"
+                      alt="usd Icon"
+                      width={16}
+                      height={16}
+                    />
+                    United States Dollar
+                  </option>
                   <option value="eur">Euro</option>
                   <option value="gbp">British Pound</option>
                 </select>
               </div>
             </div>
+          </div>
+          <div className="bg-[#FFD900] p-2 rounded-md flex text-black items-center justify-center w-[200px] m-auto">
+            <button onClick={closeModal}>Add currency</button>
           </div>
         </Modal>
       </div>

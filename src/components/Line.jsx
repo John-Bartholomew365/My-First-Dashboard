@@ -186,7 +186,13 @@ const LineChart = () => {
                 </button>
 
                 <Modal show={isModalOpen} onClose={closeModal}>
-                  <h2 className="text-[20px] mb-4 text-white">Exchange rate</h2>
+                  <div className="flex justify-between">
+                    <h2 className="text-[20px] mb-4 text-white">Exchange rate</h2>
+                    <span onClick={closeModal} style={{ cursor: "pointer" }}>
+                      &times;
+                    </span>
+                  </div>
+
                   <div>
                     <CurrencySelector label="From" defaultCurrency="USD" />
                     <div className="flex justify-center my-[20px]">
@@ -199,8 +205,11 @@ const LineChart = () => {
                     </div>
                     <CurrencySelector label="To" defaultCurrency="NGN" />
                   </div>
-                  <Link href={"#"}  className="flex justify-end items-end ">
-                    <button  className="bg-[#FFD900] w-[150px] py-2  rounded-md text-black mt-4 ">
+                  <Link href={"#"} className="flex justify-end items-end">
+                    <button
+                      className="bg-[#FFD900] w-[150px] py-2 rounded-md text-black mt-4"
+                      onClick={closeModal}
+                    >
                       View Rates
                     </button>
                   </Link>
